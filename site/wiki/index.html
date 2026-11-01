@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; blob: data:; media-src &#39;self&#39; blob: data:; connect-src &#39;self&#39; blob: data:; font-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;none&#39;">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1026" />
+    <link rel="icon" href="data:," />
+    <title>Offtrail Tales Wiki</title>
+    <style>:root{--night:#0b1026;--panel:color-mix(in srgb, var(--night) 72%, transparent);--parchment:#efe3c8;--parchment-dim:#b9ad94;--accent:#d8a657;--accent-bright:#f2c879;--accent-line:color-mix(in srgb, var(--accent) 50%, transparent);--separator:var(--accent);--serif:"Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;--sans:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--mono:ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}*,:before,:after{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--night);color:var(--parchment);font-family:var(--sans);-webkit-text-size-adjust:100%;margin:0;padding:0;font-size:1rem;line-height:1.65}.page{max-width:52rem;margin:0 auto;padding:2rem 1rem 4rem}@media (width>=600px){.page{padding:3rem 2rem 5rem}}nav{z-index:10;background:var(--night);border-bottom:1px solid var(--accent-line);padding:.6rem 1rem;font-size:.85rem;position:sticky;top:0}nav a{color:var(--accent-bright);white-space:nowrap;margin-right:1.2rem;text-decoration:none}nav a:hover{text-decoration:underline}.nav-inner{flex-wrap:wrap;gap:.3rem 0;max-width:52rem;margin:0 auto;display:flex}.nav-sep{border-left:1px solid var(--accent-line);margin:0 .4rem}h1{font-family:var(--serif);color:var(--accent-bright);margin:0 0 .5rem;font-size:2rem;line-height:1.2}h1+p{margin-top:0}h2{font-family:var(--serif);color:var(--accent-bright);border-top:1px solid var(--accent-line);margin:3rem 0 1rem;padding-top:1rem;font-size:1.5rem}h3{color:var(--accent);margin:2rem 0 .5rem;font-size:1.15rem}p{margin:.8rem 0}a{color:var(--accent-bright)}strong{color:var(--accent)}code{font-family:var(--mono);background:color-mix(in srgb, var(--parchment) 8%, transparent);border-radius:3px;padding:.15em .35em;font-size:.9em}pre{background:color-mix(in srgb, var(--parchment) 6%, transparent);border:1px solid var(--accent-line);font-family:var(--mono);border-radius:6px;padding:.8rem 1rem;font-size:.88rem;line-height:1.5;overflow-x:auto}pre code{background:0 0;padding:0}ul,ol{padding-left:1.5rem}li{margin:.3rem 0}li>ul,li>ol{margin:.2rem 0}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}th,td{text-align:left;border-bottom:1px solid var(--accent-line);padding:.45rem .7rem}th{color:var(--accent);font-weight:600}tr:last-child td{border-bottom:none}@media (width<=599px){table{font-size:.82rem}th,td{padding:.35rem .4rem}}.top-link{color:var(--parchment-dim);margin-top:1.5rem;font-size:.85rem;text-decoration:none;display:inline-block}.top-link:hover{color:var(--accent-bright)}footer{border-top:1px solid var(--accent-line);color:var(--parchment-dim);margin-top:3rem;padding-top:1.5rem;font-size:.85rem}footer a{color:var(--accent)}</style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a href="#the-app">The app</a>
+        <a href="#media-tags">Media tags</a>
+        <a href="#the-tale-editor">The editor</a>
+        <a href="#writing-a-tale-in-ink">Ink</a>
+        <a href="#browser-storage">Storage</a>
+        <span class="nav-sep"></span>
+        <a href="../">Open the App</a>
+        <a href="../editor/">Open the Editor</a>
+      </div>
+    </nav>
+
+    <div class="page" id="top">
+      <h1>Offtrail Tales</h1>
+      <p>
+        Offtrail Tales plays interactive stories with pictures, music, sound
+        and video. Stories are written in
+        <a
+          href="https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md"
+          >ink</a
+        >, inkle's language for interactive fiction. Each tale fits in one
+        <code>.tale</code> file: import it and play it in a browser, on a
+        computer or a phone.
+      </p>
+      <p style="font-size:0.92rem;color:var(--parchment-dim);">
+        Looking for how Offtrail Tales compares to other tools?
+        <a href="../features/">Features &amp; comparison</a>.
+      </p>
+
+      <!-- ───────────────────── THE APP ───────────────────── -->
+
+      <h2 id="the-app">The app</h2>
+
+      <h3 id="title-screen">Title screen</h3>
+      <p>
+        The first screen shows the app's background art and logo. "Press any
+        key" starts on a keyboard; "Tap to start" on a touch device. The menu
+        music begins after the press.
+      </p>
+
+      <h3 id="main-menu">Main menu</h3>
+      <p>
+        A list of tale cards, built-in tales first, then imported tales. Below
+        the list:
+      </p>
+      <ul>
+        <li><strong>Import tale</strong> opens a file picker for a <code>.tale</code> file.</li>
+        <li><strong>Write a tale</strong> links to the tale editor.</li>
+        <li><strong>Settings</strong> opens the Settings sheet.</li>
+        <li><strong>About</strong> describes the app and its safety.</li>
+        <li><strong>Credits</strong> lists licences, art and music credits.</li>
+      </ul>
+
+      <h3 id="tale-cards">Tale cards</h3>
+      <p>
+        Each card shows the tale's cover picture (or a default tile), title,
+        authors, description, language, size and version. Imported tales are
+        marked "Imported".
+      </p>
+      <p>Press a card to see its actions:</p>
+      <ul>
+        <li>
+          <strong>New game</strong> starts the tale from the beginning. It
+          warns when it would replace a game in progress.
+        </li>
+        <li>
+          <strong>Continue</strong> resumes from the autosave (shown only
+          when one exists).
+        </li>
+        <li>
+          <strong>Load game</strong> opens a file picker for a saved game
+          (<code>.otsave</code>).
+        </li>
+        <li>
+          <strong>Remove tale</strong> (imported tales only) deletes the tale
+          and its autosave from the browser, after a confirmation.
+        </li>
+      </ul>
+
+      <h3 id="import-a-tale">Import a tale</h3>
+      <p>
+        "Import tale" opens a file picker for a <code>.tale</code> file. The
+        app checks every file in the tale against its hashes, with a progress
+        bar. It warns when a tale with the same ID is already imported
+        (replace or cancel) and when the browser does not have enough storage
+        space.
+      </p>
+      <p>
+        A <code>.tale</code> file holds data, not code. It is safe to accept
+        from anyone.
+      </p>
+
+      <h3 id="new-game-and-the-title-card">New game and the title card</h3>
+      <p>
+        A new game opens on the title card: the tale's title, authors and
+        cover picture, over the theme's background. Any key or tap starts the
+        first passage.
+      </p>
+
+      <h3 id="the-game-screen">The game screen</h3>
+      <p>
+        The top bar has a menu button (hamburger), the tale's title, and a
+        Map button when a map tag is active.
+      </p>
+      <p>
+        Below is the story: text and pictures scroll in a column. After each
+        passage, the player picks a choice at the bottom. The chosen option
+        stays in the story as a divider.
+      </p>
+      <p>
+        If the story crashes at runtime, the player sees the error and
+        returns to the main menu.
+      </p>
+
+      <h3 id="speech">Speech</h3>
+      <p>
+        A line written as <code>Name: line</code> shows the speaker's name
+        once, above a run of their lines. The name is up to three words, each
+        starting with a letter. Narration with a colon stays narration (for
+        example, "He had one rule: never look back.").
+      </p>
+
+      <h3 id="the-end">The End</h3>
+      <p>
+        When the story ends, the screen shows "The End" with two buttons:
+        <strong>Main menu</strong> and <strong>Play again</strong>. The
+        autosave is deleted.
+      </p>
+
+      <h3 id="game-menu">Game menu</h3>
+      <p>The menu button in the top bar opens:</p>
+      <ul>
+        <li><strong>Resume</strong> closes the menu.</li>
+        <li><strong>Save game</strong> downloads an encrypted <code>.otsave</code> file.</li>
+        <li><strong>Load game</strong> opens a file picker for a <code>.otsave</code> file.</li>
+        <li><strong>Settings</strong> opens the Settings sheet.</li>
+        <li><strong>Main menu</strong> returns to the tale list.</li>
+      </ul>
+
+      <h3 id="save-files">Save files</h3>
+      <p>
+        The app saves automatically after every choice. Each tale has one
+        autosave, encrypted in browser storage. "Continue" on a tale card
+        resumes it.
+      </p>
+      <p>
+        "Save game" downloads an <code>.otsave</code> file. "Load game"
+        opens one. A save from a different version of the tale warns before
+        loading. A save from a different tale asks to switch.
+      </p>
+
+      <h3 id="maps">Maps</h3>
+      <p>
+        When a <code>map</code> tag is active, a <strong>Map</strong> button
+        appears in the top bar. It opens the map picture. The player can zoom
+        (scroll wheel, pinch, keyboard plus and minus, or buttons) and drag
+        to pan.
+      </p>
+
+      <h3 id="settings">Settings</h3>
+      <ul>
+        <li>
+          <strong>Theme</strong>: Classic, Neon City, or Scandinavian 80s.
+          Each has its own background art and colour palette. While a tale
+          with its own theme plays, a note says the tale's colours will come
+          back.
+        </li>
+        <li><strong>Text size</strong>: Small, Medium, or Large.</li>
+        <li><strong>Master volume</strong>: a slider that also shows in the sound rail.</li>
+        <li><strong>Music volume</strong>: relative to the master.</li>
+        <li><strong>Sound effects volume</strong>: relative to the master.</li>
+        <li>
+          <strong>Test buttons</strong>: play a short preview of Music, SFX,
+          Music + SFX, or Video.
+        </li>
+        <li>
+          <strong>Clear saved data</strong>: deletes all autosaves, imported
+          tales and settings from the browser, after two confirmations. The
+          page reloads.
+        </li>
+      </ul>
+
+      <h3 id="sound-rail">Sound rail</h3>
+      <p>
+        On every screen: a mute toggle and a volume slider at the right edge.
+        Moving the slider unmutes. Unmuting at zero volume brings it to 50%.
+      </p>
+      <p>
+        Sound and video pause when you switch to another app or tab, and carry on
+        when you come back.
+      </p>
+
+      <h3 id="about-and-credits">About and Credits</h3>
+      <p>
+        <strong>About</strong> explains what the app is, its safety statement
+        ("no account, no tracking, nothing leaves your device"), and a
+        "What's next" note.
+      </p>
+      <p>
+        <strong>Credits</strong> lists the licences of the engine, its
+        libraries, art, music and the sample tale. Both end with the build
+        version.
+      </p>
+
+      <h3 id="tale-themes">Tale themes</h3>
+      <p>
+        A tale can bring its own six colours and a background picture. The
+        app wears them from the title card through the game screen, the game
+        menu, Settings and videos. The main menu keeps the player's own
+        theme.
+      </p>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── MEDIA TAGS ───────────────────── -->
+
+      <h2 id="media-tags">Media tags</h2>
+      <p>
+        Tags link story text to media and to player input. A tag is
+        <code>#</code> at the end of a line, then a key, a colon and an
+        argument. Tags run before their line shows. Missing media is not an
+        error: the story goes on without it.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>Argument</th>
+            <th>What it does</th>
+            <th>Lasts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bg: &lt;id&gt;</code></td>
+            <td>picture</td>
+            <td>Sets the background</td>
+            <td>Until the next <code>bg</code></td>
+          </tr>
+          <tr>
+            <td><code>bg: none</code></td>
+            <td></td>
+            <td>Clears the background</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>img: &lt;id&gt; [frame]</code></td>
+            <td>picture</td>
+            <td>Shows a picture with the line</td>
+            <td>This line</td>
+          </tr>
+          <tr>
+            <td><code>music: &lt;id&gt;</code></td>
+            <td>sound</td>
+            <td>Starts a looping track</td>
+            <td>Until the next <code>music</code></td>
+          </tr>
+          <tr>
+            <td><code>music: none</code></td>
+            <td></td>
+            <td>Stops the music</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>music: default</code></td>
+            <td></td>
+            <td>Plays the menu theme</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>sfx: &lt;id&gt;</code></td>
+            <td>sound</td>
+            <td>Plays a sound once</td>
+            <td>Until it ends</td>
+          </tr>
+          <tr>
+            <td><code>video: &lt;id&gt;</code></td>
+            <td>video</td>
+            <td>Plays a video (skippable)</td>
+            <td>Until it ends or is skipped</td>
+          </tr>
+          <tr>
+            <td><code>map: &lt;id&gt;</code></td>
+            <td>picture</td>
+            <td>Shows a Map button</td>
+            <td>Until the next <code>map</code></td>
+          </tr>
+          <tr>
+            <td><code>map: none</code></td>
+            <td></td>
+            <td>Hides the Map button</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>wait: &lt;n&gt;s</code></td>
+            <td></td>
+            <td>Holds back the passage</td>
+            <td>That many seconds</td>
+          </tr>
+          <tr>
+            <td><code>input: &lt;var&gt; [keypad]</code></td>
+            <td>on a choice</td>
+            <td>Asks the player to type</td>
+            <td>Until ink changes the variable</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        A tag without <code>:</code> is a note. Unknown tags are ignored.
+      </p>
+
+      <h3 id="backgrounds">Backgrounds</h3>
+      <p>
+        <code>bg</code> sets a full-screen background picture.
+      </p>
+      <pre><code>The mist clears. # bg: village</code></pre>
+      <p>
+        <code>bg: none</code> clears it. Without a background (or while it
+        loads), the app shows the tale's theme picture, or if there is none,
+        the app's own art.
+      </p>
+
+      <h3 id="pictures-and-frames">Pictures and frames</h3>
+      <p>
+        <code>img</code> shows a picture with the line. An optional frame
+        word sets the border.
+      </p>
+      <pre><code>A worn map lies on the table. # img: old-map mat</code></pre>
+      <p>The six frames:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Frame</th>
+            <th>Look</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>plain</code></td>
+            <td>Rounded corners, a shadow, no border.</td>
+          </tr>
+          <tr>
+            <td><code>line</code></td>
+            <td>A thin line around the picture.</td>
+          </tr>
+          <tr>
+            <td><code>mat</code></td>
+            <td>A soft mat around the picture (padding, thin line, rounded corners).</td>
+          </tr>
+          <tr>
+            <td><code>double</code></td>
+            <td>A thin line and a second line outside it. The default when no frame is given.</td>
+          </tr>
+          <tr>
+            <td><code>glow</code></td>
+            <td>A warm glow around the picture.</td>
+          </tr>
+          <tr>
+            <td><code>print</code></td>
+            <td>A tilted snapshot on paper, like a photograph.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Pictures are shown at half pixel size (retina). Make them twice as
+        wide as they should appear on screen.
+      </p>
+
+      <h3 id="music">Music</h3>
+      <p>One track at a time, looping. A new <code>music</code> tag crossfades from the current track.</p>
+      <pre><code># music: night-theme
+The stars come out.
+# music: none 5s</code></pre>
+      <ul>
+        <li>Without a transition word, the engine uses its own default crossfade.</li>
+        <li><code>cut</code> switches instantly.</li>
+        <li>A time like <code>8s</code> or <code>2.5s</code> sets the crossfade length.</li>
+        <li><code>music: none</code> fades to silence.</li>
+        <li><code>music: default</code> goes back to the menu theme.</li>
+      </ul>
+      <p>On a new game, the first passage cuts to its music (no crossfade from the menu).</p>
+
+      <h3 id="sound-effects">Sound effects</h3>
+      <p><code>sfx</code> plays a sound once, from start to end.</p>
+      <pre><code># sfx: door-slam
+The door falls shut behind you.</code></pre>
+      <p>
+        Several sounds can play at the same time. The story cannot stop or
+        fade them. All sounds end when the player leaves the tale.
+      </p>
+
+      <h3 id="video">Video</h3>
+      <p>
+        <code>video</code> plays a video over the story. The player can skip
+        it. If the browser blocks autoplay, a Play button shows.
+      </p>
+      <pre><code># video: intro</code></pre>
+      <p>The story continues when the video ends or is skipped.</p>
+
+      <h3 id="maps-tag">Maps</h3>
+      <p>
+        <code>map</code> gives the player a Map button in the top bar. It
+        opens the picture in a zoomable, pannable window.
+      </p>
+      <pre><code>=== harbour ===
+# map: harbour-map
+Gulls wheel over the quay.</code></pre>
+      <p>
+        <code>map: none</code> hides the button. Make a map at least twice
+        the display size, so the player can zoom in on details.
+      </p>
+
+      <h3 id="pauses">Pauses</h3>
+      <p>
+        <code>wait</code> holds back the rest of the passage (its remaining
+        text and choices) for a number of seconds. A tag runs before its line
+        shows.
+      </p>
+      <pre><code>The door creaks open.
+# wait: 2s
+Something moves inside.</code></pre>
+      <p>The player cannot skip a wait.</p>
+
+      <h3 id="text-input">Text input</h3>
+      <p>
+        <code>input</code> goes on a choice, inside the brackets. The player
+        types text, which goes into an ink variable.
+      </p>
+      <pre><code>VAR code = ""
++ [Enter the code #input: code keypad]
+    {code == "1984": The lock opens.|Nothing happens.}</code></pre>
+      <p>
+        A window opens with a text field, Cancel, Clear and Submit.
+        <code>keypad</code> after the variable name shows a tappable keypad
+        picture. The variable must be declared as a <code>VAR</code> in the
+        story.
+      </p>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── THE TALE EDITOR ───────────────────── -->
+
+      <h2 id="the-tale-editor">The tale editor</h2>
+
+      <h3 id="what-you-need">What you need</h3>
+      <p>
+        A computer with a wide screen. On a phone or narrow tablet, the
+        editor says so and offers to go back to the app. The editor is at
+        <a href="../editor/">the editor page</a>. The app's main menu links
+        to it under "Write a tale".
+      </p>
+      <p>
+        The editor loads in under 750 KB of code. Media conversion (video
+        encoder, AVIF encoder) loads on demand when you drop files.
+      </p>
+
+      <h3 id="learn-by-example">Learn by example</h3>
+      <p>
+        The fastest way to learn is to open the worked example. Press
+        <strong>New</strong>, then pick <strong>The worked example</strong>
+        ("No Experience Required"). It is a complete tale with five ink files,
+        pictures and music. Read the code, change things, and watch the
+        preview update. The comments in the story explain what each part
+        does. It uses most elements (scenes, choices, speech, variables,
+        backgrounds, pictures, music and sound effects), except video and
+        maps. Each browser tab holds its own tale, so you can keep the
+        example open in one tab while writing your own tale in another.
+      </p>
+
+      <h3 id="the-layout">The layout</h3>
+      <p>
+        The code editor sits on the left. The right side switches between
+        Preview, Story map and Media. The Theme tab replaces the code editor
+        when open.
+      </p>
+
+      <h3 id="the-header-bar">The header bar</h3>
+      <p>From left to right:</p>
+      <ul>
+        <li><strong>Back arrow</strong> saves and goes to the app.</li>
+        <li><strong>Title button</strong> opens the Tale details dialog.</li>
+        <li><strong>Status</strong> ("Saved in this browser") opens the storage report.</li>
+        <li><strong>New</strong> starts a new tale (from a template or an empty file).</li>
+        <li>
+          <strong>Open</strong> opens a <code>.otproject</code>, a
+          <code>.zip</code>, or an <code>.ink</code> file. It does not open
+          <code>.tale</code> files (those are for playing, not editing).
+        </li>
+        <li><strong>Save</strong> downloads the tale as a <code>.otproject</code> file (a ZIP of the source).</li>
+        <li><strong>Publish .tale</strong> builds a <code>.tale</code> file for players.</li>
+        <li><strong>About</strong> describes the editor.</li>
+        <li><strong>Help</strong> shows the ink quick reference.</li>
+      </ul>
+
+      <h3 id="starting-a-tale">Starting a tale</h3>
+      <p>New offers:</p>
+      <ul>
+        <li>An empty tale.</li>
+        <li><strong>A short starter</strong>: a gate, a forest and a name to type.</li>
+        <li><strong>Three roads</strong>: a story that splits into paths, each with its own end.</li>
+        <li><strong>A hub</strong>: a place to come back to, with things to find before the way out.</li>
+        <li><strong>A code door</strong>: a choice that asks the player to type, with the keypad.</li>
+        <li><strong>A conversation</strong>: answers that change how someone feels, and an end that shows it.</li>
+        <li><strong>The worked example</strong>: "No Experience Required", a tale with five files, pictures and music.</li>
+      </ul>
+
+      <h3 id="the-code-editor">The code editor</h3>
+      <p>
+        The editor uses Ace with ink syntax highlighting and folding. Search
+        with Cmd+F (or Ctrl+F on Windows and Linux).
+      </p>
+      <p>
+        The editor checks the story about 400 ms after you stop typing.
+        Problems show in the left margin and in the problems list below the
+        code. The editor saves the tale to the browser about 800 ms after
+        you stop typing.
+      </p>
+
+      <h3 id="file-tabs">File tabs</h3>
+      <p>
+        <code>main.ink</code> is always the first tab. <strong>+ File</strong>
+        adds a new <code>.ink</code> file and its <code>INCLUDE</code> line
+        in <code>main.ink</code>. The close button (x) on a tab removes the
+        file and its <code>INCLUDE</code>. Tabs can be reordered by dragging
+        (except <code>main.ink</code>).
+      </p>
+      <p>
+        The download button on the active tab saves that single file as
+        <code>.ink</code> text.
+      </p>
+
+      <h3 id="insert-toolbar">Insert toolbar</h3>
+      <p>Two groups of buttons for inserting ink patterns at the cursor:</p>
+      <p>
+        <strong>Scenes and links</strong>: Scene (a knot), Go to (a divert
+        to a scene or END).
+      </p>
+      <p>
+        <strong>In a scene</strong>: Choice, Join (a gather), Speech (offers
+        existing speaker names), Media (switches to the Media tab).
+      </p>
+      <p>
+        <strong>More</strong> (dropdown): stitch, bold italic (actionable
+        text), pictures and sound tags, map, pause, typed input, variables,
+        conditionals, varying text, notes, and a link to Help.
+      </p>
+
+      <h3 id="problems-list">Problems list</h3>
+      <p>
+        Below the code editor: a count of errors, warnings and notes. Click
+        a problem to jump to its file and line.
+      </p>
+      <ul>
+        <li>
+          <strong>Errors</strong>: ink errors, a tag that names a missing or
+          wrong-type asset, a bad tag, <code>input</code> without its
+          <code>VAR</code>. Errors stop Publish.
+        </li>
+        <li>
+          <strong>Warnings</strong>: unknown tags, unused media. Warnings do
+          not stop Publish.
+        </li>
+        <li><strong>Notes</strong>: <code>TODO:</code> lines in the story.</li>
+        <li>Runtime errors from the preview also appear here.</li>
+      </ul>
+
+      <h3 id="the-preview">The preview</h3>
+      <p>
+        The right side's default tab. An iframe that runs the real game
+        screen: exactly what the player sees. The title card shows on open.
+        The story starts only when you press a key or tap.
+      </p>
+      <p>
+        After a code change, the preview replays your choices to return to
+        the passage you were on. It suppresses that passage's sounds, videos
+        and waits during the replay. <strong>Play passage again</strong>
+        replays with sounds. <strong>Restart</strong> goes back to the title
+        card with new random numbers. <strong>Stop</strong> mutes the
+        preview.
+      </p>
+      <p>
+        The choices counter ("N choices in") shows how deep you are.
+      </p>
+
+      <h3 id="story-map">Story map</h3>
+      <p>
+        A visual graph of the tale's scenes (knots) and their parts
+        (stitches). Each box shows a scene's choices, with arrows to their
+        targets. Dashed boxes are unreachable scenes.
+      </p>
+      <p>
+        Click a box or a choice row to jump to that line in the code editor.
+        Zoom with the minus and plus buttons. The map reads the ink text
+        directly, so it works even when the story has compile errors.
+      </p>
+
+      <h3 id="media">Media</h3>
+      <p>
+        Drop files anywhere on the page, or use the "add files" button. The
+        file's name becomes its asset ID: <code>Forest Clearing.avif</code>
+        becomes <code>forest-clearing</code>. The asset can be renamed
+        later with the Rename button.
+      </p>
+      <p>Each media card shows a preview and buttons for inserting tags:</p>
+      <ul>
+        <li><strong>Pictures</strong>: Background, Picture, Map, Cover (sets the title card image).</li>
+        <li><strong>Sounds</strong>: Music, Sound.</li>
+        <li><strong>Videos</strong>: Video.</li>
+        <li>
+          <strong>All types</strong>: Rename, Credit (records who made the
+          file), Remove.
+        </li>
+      </ul>
+      <p>
+        <strong>Rename</strong> changes the asset ID. The editor updates
+        every tag in the story that references the old name, and updates the
+        cover and credits if they use it. You can also click the pen icon
+        next to the asset name.
+      </p>
+      <p>
+        <strong>Remove</strong> asks first, and shows how many tags in the
+        story use the file. On "Remove", the editor deletes the file and
+        strips every tag that references it from the ink text, including
+        lines that become empty. You do not need to clean up the tags by
+        hand.
+      </p>
+      <p>Sort by name (A to Z, Z to A) or by type (pictures, sounds, videos).</p>
+
+      <h3 id="media-conversion">Media conversion</h3>
+      <p>
+        All conversion runs on your device. Nothing is uploaded. A file
+        already in the right format and within the limits goes in as it is.
+      </p>
+
+      <h4>Pictures</h4>
+      <table>
+        <tbody>
+          <tr><th>Accepted</th><td>PNG, JPEG, WebP, HEIC, HEIF, GIF, BMP, TIFF</td></tr>
+          <tr><th>Output</th><td>AVIF</td></tr>
+          <tr><th>Encoder</th><td>libavif (via jSquash WebAssembly), quality 60, speed 6</td></tr>
+          <tr><th>Max long edge</th><td>2560 px. Larger pictures are scaled down (high-quality resampling).</td></tr>
+          <tr><th>Size guideline</th><td>500 KB per picture. Larger files get a warning but are not refused.</td></tr>
+          <tr><th>Pass-through</th><td>An <code>.avif</code> file goes in unchanged. A <code>.webp</code> file goes in unchanged when the tale already has the same picture as AVIF (then the WebP is the fallback).</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Pictures are shown at half pixel size (retina scaling). Make them
+        about twice as wide as they should appear on screen.
+      </p>
+
+      <h4>Sounds</h4>
+      <table>
+        <tbody>
+          <tr><th>Accepted</th><td>MP3, WAV, FLAC, Ogg, Opus, AAC, AIFF, M4A</td></tr>
+          <tr><th>Output</th><td>M4A (AAC in an MP4 container)</td></tr>
+          <tr><th>Encoder</th><td>WebCodecs (the browser's own AAC encoder)</td></tr>
+          <tr><th>Sample rate</th><td>48 kHz</td></tr>
+          <tr><th>Bitrate</th><td>128 kbps, constant bitrate</td></tr>
+          <tr><th>Channels</th><td>Mono or stereo. Files with more channels are mixed down to stereo.</td></tr>
+          <tr><th>Max size</th><td>10 MB per sound (about 10 minutes at 128 kbps). Longer files are refused before conversion starts.</td></tr>
+          <tr><th>Pass-through</th><td>An <code>.m4a</code> file with AAC, no video track and within 10 MB goes in unchanged.</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Videos</h4>
+      <table>
+        <tbody>
+          <tr><th>Accepted</th><td>MP4, MOV, WebM, MKV, M4V</td></tr>
+          <tr><th>Output</th><td>MP4 (H.264 video + AAC audio)</td></tr>
+          <tr><th>Encoder</th><td>WebCodecs (the browser's own H.264 and AAC encoders), via Mediabunny</td></tr>
+          <tr><th>Video bitrate</th><td>5 Mbps</td></tr>
+          <tr><th>Audio</th><td>AAC, 48 kHz, 128 kbps</td></tr>
+          <tr><th>Max width</th><td>1920 px. Wider videos are scaled down, keeping the aspect ratio.</td></tr>
+          <tr><th>Max size</th><td>200 MB per video (about 5 minutes at 5 Mbps + 128 kbps). Longer files are refused before conversion starts.</td></tr>
+          <tr><th>Pass-through</th><td>An <code>.mp4</code> file with H.264 video, AAC or no audio, no wider than 1920 px and within 200 MB goes in unchanged. A MOV with H.264 within the size limit copies the picture track without re-encoding.</td></tr>
+        </tbody>
+      </table>
+      <p>
+        If the browser cannot encode a video's codec, it says so and asks you
+        to convert the file to MP4 with H.264 and AAC first (for example
+        with FFmpeg or HandBrake).
+      </p>
+
+      <h4>Tale size</h4>
+      <p>
+        There is no hard limit on the whole tale's size, but the editor warns
+        when the total passes 1 GB: a big tale takes long to import and fills
+        the player's storage.
+      </p>
+
+      <h3 id="theme">Theme</h3>
+      <p>
+        The <strong>Theme</strong> tab (the last tab in the code editor) gives
+        the tale its own colour palette and a background picture.
+      </p>
+      <ul>
+        <li>
+          <strong>Own theme</strong> toggles whether the tale has its own
+          colours or uses the player's.
+        </li>
+        <li>
+          <strong>Start from</strong> sets all six colours to Classic, Neon
+          City, or Scandinavian 80s as a starting point. It asks before
+          replacing manually picked colours.
+        </li>
+        <li>
+          The <strong>colour wheel</strong> picks a colour: hue around the
+          ring, saturation from the centre out, brightness on the slider, or
+          type a hex code.
+        </li>
+        <li>
+          The six <strong>colour roles</strong>: Background, Text, Muted
+          text, Highlights, Borders, Separators. Each shows a swatch, its
+          hex value and (for text colours) the contrast ratio against the
+          background. A ratio below 4.5:1 is flagged.
+        </li>
+        <li>
+          <strong>Match the background</strong> resets the five
+          non-background colours to follow the background, after a
+          confirmation if any were picked by hand.
+        </li>
+        <li>
+          <strong>Picture</strong> chooses one of the tale's pictures as a
+          background image, or "None".
+        </li>
+      </ul>
+      <p>Changes show in the preview immediately.</p>
+
+      <h3 id="tale-details">Tale details</h3>
+      <p>
+        Opened from the title button in the header bar, or before the first
+        Publish.
+      </p>
+      <ul>
+        <li><strong>Title</strong> (required).</li>
+        <li><strong>Authors</strong> (comma-separated).</li>
+        <li><strong>Language</strong> (a code: en, nl, sv, and so on).</li>
+        <li><strong>Description</strong> (optional).</li>
+        <li><strong>Licence</strong> (optional, an SPDX name like CC-BY-4.0).</li>
+        <li><strong>ID</strong> (derived from the title if left empty).</li>
+        <li><strong>Version</strong> (made by Publish if left empty).</li>
+      </ul>
+
+      <h3 id="publishing">Publishing</h3>
+      <p><strong>Publish .tale</strong> builds a tale file for players.</p>
+      <ol>
+        <li>It asks for the tale details the first time.</li>
+        <li>It refuses while errors exist.</li>
+        <li>It plays the tale 50 times with random choices, to catch crashes and missing assets.</li>
+        <li>It packs the <code>.tale</code> file and downloads it.</li>
+      </ol>
+      <p>Import the file in the app to play it, or share it with others.</p>
+
+      <h3 id="projects-and-tales">Projects and tales</h3>
+      <p>Two kinds of file:</p>
+      <ul>
+        <li>
+          <code>.otproject</code>: the tale's source, to open in the editor
+          again. Keep this. It is a standard ZIP holding <code>story/</code>
+          (plain <code>.ink</code> files), <code>media/</code> (pictures,
+          sounds, videos) and <code>tale.json</code> (title, authors,
+          language, theme, credits). You can unzip it and open the
+          <code>.ink</code> files in Inky or any text editor.
+        </li>
+        <li>
+          <code>.tale</code>: the compiled tale, for playing and sharing.
+          Import it in the app. Also a ZIP, holding the compiled ink JSON
+          (no <code>.ink</code> source) and all media. It cannot run code:
+          the app checks every file against its hash before playing. Each
+          tale has an ID and a version, so the app can detect updates.
+        </li>
+      </ul>
+      <p>
+        Open takes <code>.otproject</code>, <code>.zip</code> of a tale
+        source, or a plain <code>.ink</code> file. It does not take
+        <code>.tale</code> files.
+      </p>
+      <p>
+        Your source is standard <code>.ink</code> throughout. Every media
+        tag is a standard ink tag that Inky and inklecate silently ignore.
+        No <code>EXTERNAL</code> functions, no custom syntax. Write here,
+        leave any time, take your files with you.
+      </p>
+      <p>
+        Both format specifications are on the wiki:
+        <a href="story-package-spec.md">story package spec</a> and
+        <a href="otproject-spec.md">project file spec</a>.
+      </p>
+
+      <h3 id="where-the-work-is-kept">Where the work is kept</h3>
+      <p>
+        The tale is stored in the browser's IndexedDB, at the site's address.
+        The editor saves after each change.
+      </p>
+      <p>
+        Each browser tab holds its own tale (via Web Locks). After a reload,
+        a tab resumes its tale. Closing or navigating away asks when unsaved
+        work, media tasks, or unkept media would be lost.
+      </p>
+      <p>
+        Safari may delete site data after 7 days without a visit. Save the
+        <code>.otproject</code> file as a backup.
+      </p>
+      <p>
+        The "Kept in this browser" report (the status button in the header
+        bar) shows the tale's save status, its size, whether the browser has
+        promised persistent storage, and other tales kept in this browser.
+      </p>
+
+      <h3 id="keyboard-shortcuts">Keyboard shortcuts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Shortcut</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cmd+S (Ctrl+S)</td>
+            <td>Save now (the editor auto-saves, so this forces an immediate save).</td>
+          </tr>
+          <tr>
+            <td>Cmd+F (Ctrl+F)</td>
+            <td>Search in the code.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Closing or navigating away asks when unsaved work exists.</p>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── BROWSER STORAGE ───────────────────── -->
+
+      <h2 id="browser-storage">Browser storage</h2>
+      <p>
+        The app stores autosaves and settings in localStorage, and imported
+        tales in IndexedDB. The editor stores the tale being written in its
+        own IndexedDB. Nothing syncs between devices. Nothing leaves the
+        device.
+      </p>
+      <p>
+        Safari may delete site data after 7 days without a visit. Other
+        browsers keep it until the user clears it.
+      </p>
+      <p>
+        "Clear saved data" in Settings deletes the app's data (autosaves,
+        imported tales, settings). It does not delete the editor's data.
+      </p>
+
+      <!-- ───────────────────── INK ───────────────────── -->
+
+      <h2 id="writing-a-tale-in-ink">Writing a tale in ink</h2>
+      <p>
+        Ink is a plain-text language for interactive stories, made by
+        <a href="https://www.inklestudios.com/ink/">inkle</a>. Five words
+        name the shapes of a story:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Looks like</th>
+            <th>What it does</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>knot</td>
+            <td><code>=== name ===</code></td>
+            <td>A scene.</td>
+          </tr>
+          <tr>
+            <td>stitch</td>
+            <td><code>= name</code></td>
+            <td>A part of a scene.</td>
+          </tr>
+          <tr>
+            <td>divert</td>
+            <td><code>-&gt; name</code></td>
+            <td>Goes to a scene or a stitch.</td>
+          </tr>
+          <tr>
+            <td>choice</td>
+            <td><code>*</code> or <code>+</code></td>
+            <td>Something the player picks.</td>
+          </tr>
+          <tr>
+            <td>gather</td>
+            <td><code>-</code></td>
+            <td>Where the branches meet again.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Speech is <code>Name: line</code>. Media is tags (see
+        <a href="#media-tags">Media tags</a> above).
+      </p>
+      <p>
+        The editor's <strong>Help</strong> button shows a quick reference
+        with examples and an Insert button for each pattern. The
+        <strong>More</strong> menu inserts patterns too.
+      </p>
+      <h3 id="what-ink-can-do">What ink can do</h3>
+      <ul>
+        <li><strong>Variables and functions.</strong> <code>VAR courage = 0</code>, conditional text <code>{courage &gt; 2: You stand tall.}</code>.</li>
+        <li><strong>Random numbers and varying text.</strong> <code>{~Rain.|Fog.|Sun.}</code> picks one at random. <code>{First time.|Second time.|After that.}</code> cycles.</li>
+        <li><strong>Conditional choices.</strong> <code>* {courage &gt; 2} [Climb]</code> shows only when the condition holds.</li>
+        <li><strong>Repeatable choices.</strong> <code>+</code> stays; <code>*</code> goes away once picked.</li>
+        <li><strong>Text input.</strong> <code># input: variable</code> opens a text field. The result goes into an ink variable.</li>
+        <li><strong>Multiple files.</strong> <code>INCLUDE act2.ink</code> splits a story across files.</li>
+        <li><strong>Tunnels, threads and lists.</strong> They work, but most tales do not need them.</li>
+      </ul>
+      <p>
+        The full language is in inkle's manual:
+        <a href="https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md">Writing with ink</a>.
+      </p>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── ACCESSIBILITY ───────────────────── -->
+
+      <h2 id="accessibility">Accessibility</h2>
+      <ul>
+        <li><strong>Languages.</strong> Tales set their language. Ink handles Unicode, including diacritics and non-Latin alphabets.</li>
+        <li><strong>Screen readers.</strong> The app uses semantic HTML and ARIA labels. Not yet tested with screen readers.</li>
+        <li><strong>Timed events.</strong> The <code>wait</code> tag pauses text for a set number of seconds and is not skippable. Videos are skippable.</li>
+      </ul>
+
+      <!-- ───────────────────── LICENCE ───────────────────── -->
+
+      <h2 id="licence">Licence</h2>
+      <p>
+        The app and editor are MIT-licensed. Tales you make are yours, under
+        whatever licence you choose. The app claims no rights over your
+        content.
+      </p>
+
+      <!-- ───────────────────── LINKS ───────────────────── -->
+
+      <h2 id="links">Links</h2>
+      <ul>
+        <li><a href="../">The Offtrail Tales app</a></li>
+        <li><a href="../editor/">The Offtrail Tales Editor</a></li>
+        <li><a href="../features/">Features &amp; comparison</a></li>
+        <li><a href="../features/checklist.html">New platform checklist</a></li>
+        <li><a href="https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md">Writing with ink</a> (inkle's wiki)</li>
+        <li>Contact: <a href="mailto:offtrail-tales@proton.me">offtrail-tales@proton.me</a></li>
+      </ul>
+
+      <footer>
+        <p>
+          Offtrail Tales by Richard Karlsson Linn&eacute;r.
+          <a href="mailto:offtrail-tales@proton.me">offtrail-tales@proton.me</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

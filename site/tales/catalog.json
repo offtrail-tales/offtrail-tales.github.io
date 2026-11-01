@@ -1,0 +1,23 @@
+{
+  "format": "0.1",
+  "tales": [
+    {
+      "id": "the-intercept",
+      "version": "1.0.0",
+      "title": "The Intercept",
+      "language": "en",
+      "manifest": "the-intercept/tale.json",
+      "storyBytes": 154466,
+      "mediaBytes": 0
+    },
+    {
+      "id": "no-exp",
+      "version": "2026-10-22-3a1088c",
+      "title": "No Experience Required",
+      "language": "en",
+      "manifest": "no-exp/tale.json",
+      "storyBytes": 40591,
+      "mediaBytes": 6465662
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; blob: data:; media-src &#39;self&#39; blob: data:; connect-src &#39;self&#39; blob: data:; font-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;none&#39;">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1026" />
+    <link rel="icon" href="data:," />
+    <title>Offtrail Tales — New Platform Checklist</title>
+    <style>:root{--night:#0b1026;--panel:color-mix(in srgb, var(--night) 72%, transparent);--parchment:#efe3c8;--parchment-dim:#b9ad94;--accent:#d8a657;--accent-bright:#f2c879;--accent-line:color-mix(in srgb, var(--accent) 50%, transparent);--separator:var(--accent);--serif:"Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;--sans:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--mono:ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}*,:before,:after{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--night);color:var(--parchment);font-family:var(--sans);-webkit-text-size-adjust:100%;margin:0;padding:0;font-size:1rem;line-height:1.65}.page{max-width:60rem;margin:0 auto;padding:2rem 1rem 4rem}@media (width>=600px){.page{padding:3rem 2rem 5rem}}nav{z-index:10;background:var(--night);border-bottom:1px solid var(--accent-line);padding:.6rem 1rem;font-size:.85rem;position:sticky;top:0}nav a{color:var(--accent-bright);white-space:nowrap;margin-right:1.2rem;text-decoration:none}nav a:hover{text-decoration:underline}.nav-inner{flex-wrap:wrap;gap:.3rem 0;max-width:60rem;margin:0 auto;display:flex}.nav-sep{border-left:1px solid var(--accent-line);margin:0 .4rem}h1{font-family:var(--serif);color:var(--accent-bright);margin:0 0 .5rem;font-size:2rem;line-height:1.2}h1+p{margin-top:0}h2{font-family:var(--serif);color:var(--accent-bright);border-top:1px solid var(--accent-line);margin:2.5rem 0 .8rem;padding-top:1rem;font-size:1.5rem}p{margin:.8rem 0}a{color:var(--accent-bright)}strong{color:var(--accent)}em{color:var(--accent);font-style:normal}code{font-family:var(--mono);background:color-mix(in srgb, var(--parchment) 8%, transparent);border-radius:3px;padding:.15em .35em;font-size:.9em}.qa{margin:.6rem 0}.qa em{margin-bottom:.15rem;display:block}footer{border-top:1px solid var(--accent-line);color:var(--parchment-dim);margin-top:3rem;padding-top:1.5rem;font-size:.85rem}footer a{color:var(--accent)}.top-link{color:var(--parchment-dim);margin-top:1.5rem;font-size:.85rem;text-decoration:none;display:inline-block}.top-link:hover{color:var(--accent-bright)}</style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a href="./">Features &amp; Comparison</a>
+        <span class="nav-sep"></span>
+        <a href="../">App</a>
+        <a href="../editor/">Editor</a>
+        <a href="../wiki/">Wiki</a>
+      </div>
+    </nav>
+
+    <div class="page" id="top">
+      <h1>New Platform Checklist</h1>
+      <p>
+        Answers to the standard questions for new IF platforms
+        (<a href="https://intfiction.org/t/a-checklist-of-questions-for-new-authoring-systems/78437">Hidnook's list</a>).
+        See also the <a href="./">features and comparison page</a>.
+      </p>
+
+      <h2 id="development">Development</h2>
+
+      <div class="qa">
+        <em>Where is the documentation?</em>
+        The <a href="../wiki/">wiki</a> covers the app, the editor and every
+        media tag. The editor's Help button has a quick ink reference. The
+        formats have full specifications:
+        <a href="../wiki/story-package-spec.md">story package spec</a> and
+        <a href="../wiki/otproject-spec.md">project file spec</a>.
+      </div>
+
+      <div class="qa">
+        <em>Extending the system?</em>
+        Stories are standard ink, so anything ink supports works. The media
+        tags are documented in the spec, and the runtime is MIT-licensed.
+        If you write ink in another editor, every media tag is a standard
+        ink tag that Inky silently ignores.
+      </div>
+
+      <div class="qa">
+        <em>Extensions, modules, libraries?</em>
+        Not currently. Stories use ink's built-in features (variables,
+        functions, tunnels, threads, lists). Media is handled through
+        <a href="../wiki/#media-tags">tags</a>, not extensions.
+      </div>
+
+      <div class="qa">
+        <em>How easy to pick up?</em>
+        The editor ships with five starter templates and a worked example
+        ("No Experience Required") with comments that explain every feature.
+        The Help button covers the five words you need to start writing.
+        The <a href="../wiki/">wiki</a> documents every tag and feature.
+      </div>
+
+      <div class="qa">
+        <em>Syntax?</em>
+        Standard ink. <code>=== scene ===</code>, <code>* [Choice]</code>,
+        <code>-> scene</code>, <code># music: track</code>. See inkle's
+        <a href="https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md">Writing with ink</a>.
+      </div>
+
+      <h2 id="environment">Environment</h2>
+
+      <div class="qa">
+        <em>Website only or separate IDE?</em>
+        Browser editor at the site. No install. You can also write
+        <code>.ink</code> in any text editor and open it in the editor.
+      </div>
+
+      <div class="qa">
+        <em>Save projects locally?</em>
+        Yes. Save downloads an <code>.otproject</code> (ZIP of the full
+        source: ink files, media, metadata). Open loads it back. Nothing
+        is stored on a server.
+        <a href="../wiki/otproject-spec.md">Project file spec</a>.
+      </div>
+
+      <div class="qa">
+        <em>Offline editing?</em>
+        Not yet, but once the full source is public you can run your own
+        localhost. There is already a macOS app (not yet public).
+      </div>
+
+      <div class="qa">
+        <em>WYSIWYG vs code?</em>
+        Code editor with a live preview that shows exactly what the player
+        sees and replays your choices when you edit. No visual/node editor,
+        but the story map gives a graph of all scenes and choices. See
+        <a href="./#features">features</a>.
+      </div>
+
+      <div class="qa">
+        <em>Spell check?</em>
+        Your browser's built-in spell check works, or download the
+        <code>.ink</code> files and use any spell checker.
+      </div>
+
+      <h2 id="exporting">Exporting and publishing</h2>
+
+      <div class="qa">
+        <em>Exportable as playable websites?</em>
+        Publish makes a <code>.tale</code> file that players import in
+        the <a href="../">browser app</a>. Not a standalone HTML page, but
+        the app itself is static files you can host anywhere.
+        <a href="../wiki/story-package-spec.md">Tale format spec</a>.
+      </div>
+
+      <div class="qa">
+        <em>Download and play outside the platform?</em>
+        The <code>.tale</code> is a standard ZIP (data only, no code). The
+        app is static HTML, CSS and JS with no server, so you can self-host
+        it or run it from a local file. A macOS desktop app also exists
+        (not yet public).
+      </div>
+
+      <div class="qa">
+        <em>Share freely?</em>
+        Yes. The author owns their <code>.tale</code>. Distribute however
+        you like.
+      </div>
+
+      <div class="qa">
+        <em>License on games?</em>
+        The app is MIT-licensed. Your tales are yours, under whatever
+        licence you choose and that fits your assets. There is no user
+        agreement that claims rights over your work.
+      </div>
+
+      <div class="qa">
+        <em>Play without an account?</em>
+        Yes. No account exists. No registration, no login, no tracking.
+        Open the <a href="../">app</a> and play.
+      </div>
+
+      <h2 id="logic">Logic and mechanics</h2>
+
+      <div class="qa">
+        <em>Variables, functions?</em>
+        Yes. Ink has global variables, functions, tunnels, threads and
+        lists. Conditionals gate choices and text on any variable or
+        combination of variables.
+      </div>
+
+      <div class="qa">
+        <em>How complex?</em>
+        As complex as ink allows. Ink powers commercial games like 80 Days
+        and Heaven's Vault. The publish step runs 50 random playthroughs
+        to catch dead ends and errors before you share.
+      </div>
+
+      <div class="qa">
+        <em>Random number generation?</em>
+        Yes. <code>{~option|option|option}</code>.
+      </div>
+
+      <div class="qa">
+        <em>Text input?</em>
+        Yes. <code># input: variable</code> opens a text field.
+        <code># input: variable keypad</code> adds a tappable keypad.
+      </div>
+
+      <div class="qa">
+        <em>Repeatable choices?</em>
+        <code>+</code> stays; <code>*</code> goes away once picked.
+      </div>
+
+      <div class="qa">
+        <em>World model?</em>
+        No built-in world model. Ink variables and conditional logic can
+        simulate one.
+      </div>
+
+      <div class="qa">
+        <em>Linear storylines?</em>
+        Yes. Ink handles linear, branching and mixed structures. The story
+        map in the editor shows whichever structure you build.
+      </div>
+
+      <h2 id="ui">UI and UX</h2>
+
+      <div class="qa">
+        <em>Easy to style?</em>
+        Tales can bring their own colour theme (six colours and a background
+        picture) via the editor's Theme tab. The editor checks contrast for
+        you. No CSS needed. See <a href="./#features">features</a>.
+      </div>
+
+      <div class="qa">
+        <em>Alternative colour schemes?</em>
+        Three app themes. Each tale can override them with its own.
+      </div>
+
+      <h2 id="platform">Platform comparison</h2>
+
+      <div class="qa">
+        <em>What does it do that others struggle with?</em>
+        Media as a first-class feature: drop in images, audio, video and
+        maps, the editor converts them. A shared player that separates
+        story from runtime, so one app plays any tale. Mobile-friendly
+        output without extra work. A browser editor with live preview and
+        automatic media conversion. One <code>.tale</code> file to share.
+        See the <a href="./">full comparison with other tools</a>.
+      </div>
+
+      <div class="qa">
+        <em>What does it struggle with?</em>
+        The editor GUI is solid but still growing: no drag-and-drop story
+        building or interactive map editing yet. No standalone HTML export.
+        No multiplayer. New, small community. I focused on robustness and
+        usability over breadth of features.
+      </div>
+
+      <h2 id="ai">AI</h2>
+
+      <div class="qa">
+        <em>Was AI involved?</em>
+        Yes. I could not have built it without Claude by Anthropic. The
+        design and creative decisions are mine.
+      </div>
+
+      <div class="qa">
+        <em>Is AI a part of the features?</em>
+        No. No AI runs in the app or editor. Authors decide their own level
+        of AI use.
+      </div>
+
+      <h2 id="business">Business model</h2>
+
+      <div class="qa">
+        <em>Paid or free?</em>
+        Free. No ads, no tracking, no account, no subscription. You are not
+        the product.
+      </div>
+
+      <div class="qa">
+        <em>Monetization?</em>
+        The app is free. I may accept donations for stories I write, or take
+        commissions to build tales for museums, courses and the like. The app
+        itself will never be monetized. There is no user agreement that
+        claims any rights over authors' work.
+      </div>
+
+      <div class="qa">
+        <em>Compared to Itch?</em>
+        Not a marketplace. Authors distribute <code>.tale</code> files
+        however they choose, including on Itch.
+      </div>
+
+      <h2 id="proof">Proof of concept</h2>
+
+      <div class="qa">
+        <em>Example game?</em>
+        "No Experience Required" ships with the app. A short dystopian tale
+        using scenes, choices, speech, variables, backgrounds, pictures,
+        music and sound.
+      </div>
+
+      <div class="qa">
+        <em>Best demonstration?</em>
+        Play it on your phone. Then open it as the worked example in the
+        editor on a computer.
+      </div>
+
+      <h2 id="accessibility">Accessibility</h2>
+
+      <div class="qa">
+        <em>Languages other than English?</em>
+        Yes. Ink handles Unicode, diacritics and non-Latin alphabets. The
+        app and editor interface is in English, but story content works in
+        any language.
+      </div>
+
+      <div class="qa">
+        <em>Screen-reader friendly?</em>
+        Semantic HTML and ARIA labels throughout. Not yet tested with
+        screen readers, and I would welcome feedback on this.
+      </div>
+
+      <div class="qa">
+        <em>Timed text?</em>
+        The <code># wait</code> tag pauses text. Not skippable currently.
+        Videos are skippable.
+      </div>
+
+      <h2 id="links">Links</h2>
+
+      <div class="qa">
+        <a href="../">The app</a> · <a href="../editor/">The editor</a> ·
+        <a href="../wiki/">Wiki</a> ·
+        <a href="../wiki/story-package-spec.md">.tale spec</a> ·
+        <a href="../wiki/otproject-spec.md">.otproject spec</a> ·
+        <a href="./">Features &amp; comparison</a> ·
+        <a href="https://www.youtube.com/watch?v=zCyA-NrY04E">Walkthrough on YouTube</a>
+      </div>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <footer>
+        <p>
+          Offtrail Tales by Richard Karlsson Linn&eacute;r.
+          <a href="mailto:offtrail-tales@proton.me">offtrail-tales@proton.me</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

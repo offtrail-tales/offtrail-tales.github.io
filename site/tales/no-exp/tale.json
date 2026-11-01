@@ -1,0 +1,115 @@
+{
+  "format": "0.1",
+  "id": "no-exp",
+  "title": "No Experience Required",
+  "language": "en",
+  "authors": [
+    "Richard Karlsson Linnér"
+  ],
+  "description": "Machines do the work now. The one thing they can't make is a genuine human reaction, and Tender pays for yours.",
+  "cover": "no-exp-kitchen",
+  "license": "proprietary",
+  "credits": [
+    {
+      "assets": [
+        "whispering-pines"
+      ],
+      "by": "ESM via Splice, vintage male vocal \"Whispering Pines Resort\" (re-encoded, volume lowered)",
+      "license": "LicenseRef-Splice"
+    },
+    {
+      "assets": [
+        "dark-crime-atmosphere"
+      ],
+      "by": "JorisVermeer, Dark Crime Atmosphere (re-encoded, volume lowered)",
+      "license": "LicenseRef-Pixabay-Content-License",
+      "source": "https://pixabay.com/music/ambient-dark-crime-atmosphere-533359/"
+    },
+    {
+      "assets": [
+        "noir-crime-tension"
+      ],
+      "by": "JorisVermeer, Noir Crime Tension (re-encoded, volume lowered)",
+      "license": "LicenseRef-Pixabay-Content-License",
+      "source": "https://pixabay.com/music/ambient-noir-crime-tension-535274/"
+    },
+    {
+      "assets": [
+        "edge-of-darkness"
+      ],
+      "by": "NaturesEye, Edge of Darkness - Dark Cinematic Film Score (re-encoded)",
+      "license": "LicenseRef-Pixabay-Content-License",
+      "source": "https://pixabay.com/music/ambient-edge-of-darkness-dark-cinematic-film-score-113975/"
+    },
+    {
+      "assets": [
+        "no-exp-kitchen"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    }
+  ],
+  "version": "2026-10-22-3a1088c",
+  "story": {
+    "path": "story/main.ink.json",
+    "bytes": 40591,
+    "sha256": "17929d6d1e6ac9c0e26af58ea65260f20d5a26fc59ecac3d586dde3f1dd639c7"
+  },
+  "media": {
+    "dark-crime-atmosphere": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/dark-crime-atmosphere.m4a",
+          "bytes": 1216258,
+          "sha256": "629adabf06b58746f09ced927d7cb62b6596126203e0b20fcb50b150bd0c7abf"
+        }
+      ]
+    },
+    "edge-of-darkness": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/edge-of-darkness.m4a",
+          "bytes": 3628458,
+          "sha256": "92b88344146eb5e239077e1ad9e424966ab4891ca8d59c1961c73695d8b7b45a"
+        }
+      ]
+    },
+    "noir-crime-tension": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/noir-crime-tension.m4a",
+          "bytes": 1216258,
+          "sha256": "2cf2f1fb939434a9432ec363a793c067d5eaec4406ece1ddfac918953fe2d166"
+        }
+      ]
+    },
+    "whispering-pines": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/whispering-pines.m4a",
+          "bytes": 268662,
+          "sha256": "78c41e7979676b669e40a9b636db2d009160c806fd3e74cf14a88db57ae8ed58"
+        }
+      ]
+    },
+    "no-exp-kitchen": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/no-exp-kitchen.avif",
+          "bytes": 136026,
+          "sha256": "88e8ae8a47e5b8e0a5c2066d204787e9027a8d012b4244a4da3037b014f65f62"
+        },
+        {
+          "path": "media/img/no-exp-kitchen.webp",
+          "bytes": 159590,
+          "sha256": "009ac18c7a57a5487ac5c553c89f9e69604f63be31d82dc60897bf1573a2016f"
+        }
+      ]
+    }
+  }
+}

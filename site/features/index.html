@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; blob: data:; media-src &#39;self&#39; blob: data:; connect-src &#39;self&#39; blob: data:; font-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;none&#39;">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1026" />
+    <link rel="icon" href="data:," />
+    <title>Offtrail Tales — Features &amp; Comparison</title>
+    <style>:root{--night:#0b1026;--panel:color-mix(in srgb, var(--night) 72%, transparent);--parchment:#efe3c8;--parchment-dim:#b9ad94;--accent:#d8a657;--accent-bright:#f2c879;--accent-line:color-mix(in srgb, var(--accent) 50%, transparent);--separator:var(--accent);--serif:"Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;--sans:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--mono:ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}*,:before,:after{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--night);color:var(--parchment);font-family:var(--sans);-webkit-text-size-adjust:100%;margin:0;padding:0;font-size:1rem;line-height:1.65}.page{max-width:60rem;margin:0 auto;padding:2rem 1rem 4rem}@media (width>=600px){.page{padding:3rem 2rem 5rem}}nav{z-index:10;background:var(--night);border-bottom:1px solid var(--accent-line);padding:.6rem 1rem;font-size:.85rem;position:sticky;top:0}nav a{color:var(--accent-bright);white-space:nowrap;margin-right:1.2rem;text-decoration:none}nav a:hover{text-decoration:underline}.nav-inner{flex-wrap:wrap;gap:.3rem 0;max-width:60rem;margin:0 auto;display:flex}.nav-sep{border-left:1px solid var(--accent-line);margin:0 .4rem}h1{font-family:var(--serif);color:var(--accent-bright);margin:0 0 .5rem;font-size:2rem;line-height:1.2}h1+p{margin-top:0}h2{font-family:var(--serif);color:var(--accent-bright);border-top:1px solid var(--accent-line);margin:3rem 0 1rem;padding-top:1rem;font-size:1.5rem}h3{color:var(--accent);margin:2rem 0 .5rem;font-size:1.15rem}p{margin:.8rem 0}a{color:var(--accent-bright)}strong{color:var(--accent)}code{font-family:var(--mono);background:color-mix(in srgb, var(--parchment) 8%, transparent);border-radius:3px;padding:.15em .35em;font-size:.9em}ul,ol{padding-left:1.5rem}li{margin:.3rem 0}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.88rem}th,td{text-align:left;border-bottom:1px solid var(--accent-line);vertical-align:top;padding:.45rem .7rem}th{color:var(--accent);white-space:nowrap;font-weight:600}tr:last-child td{border-bottom:none}@media (width<=599px){table{font-size:.78rem}th,td{padding:.35rem .4rem}}.check{color:var(--accent-bright)}.no{color:var(--parchment-dim)}.top-link{color:var(--parchment-dim);margin-top:1.5rem;font-size:.85rem;text-decoration:none;display:inline-block}.top-link:hover{color:var(--accent-bright)}footer{border-top:1px solid var(--accent-line);color:var(--parchment-dim);margin-top:3rem;padding-top:1.5rem;font-size:.85rem}footer a{color:var(--accent)}</style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a href="#features">Features</a>
+        <a href="#established">Established tools</a>
+        <a href="#comparison">New tools</a>
+        <a href="#ink-based">Ink-based</a>
+        <a href="#choice-based">Choice-based</a>
+        <a href="#other">Other paradigms</a>
+        <span class="nav-sep"></span>
+        <a href="../">App</a>
+        <a href="../editor/">Editor</a>
+        <a href="../wiki/">Wiki</a>
+      </div>
+    </nav>
+
+    <div class="page" id="top">
+      <h1>Features &amp; Comparison</h1>
+      <p>
+        Offtrail Tales is a free browser-based editor and player for
+        choice-based interactive fiction with media, powered by ink.
+        This page explains how it works and how it compares to other
+        tools. Last updated November 2026.
+      </p>
+
+      <!-- ───────────────────── FEATURES ───────────────────── -->
+
+      <p style="text-align:center;margin:1.5rem 0 2rem;">
+        <a href="https://www.youtube.com/watch?v=zCyA-NrY04E"
+           style="display:inline-block;padding:0.6rem 1.4rem;border:1px solid var(--accent-line);border-radius:8px;color:var(--accent-bright);text-decoration:none;font-size:1.05rem;">
+          ▶ Watch the walkthrough on YouTube
+        </a>
+      </p>
+
+      <h2 id="features">What Offtrail Tales does</h2>
+
+      <h3>Architecture</h3>
+      <p>
+        The player, the editor and the tale are three independent modules.
+        The tale is the author's product: a portable file with a complete
+        technical specification. The player reads it, the editor writes it,
+        and <code>.otproject</code> keeps the source separate from the
+        distributed <code>.tale</code>. The author cares about the tale.
+        The rest is infrastructure.
+      </p>
+      <p>
+        Purpose-built for this one job, it is more capable and easier to
+        use than tools that try to be general-purpose game engines. In
+        this space, no other tool separates player, editor and tale this
+        way. Other tools bake the story into its own player, publish
+        through a platform, or hand the author a raw file with no player
+        at all. The author ends up building menus, save systems and output
+        formats instead of writing the story, and the result rarely works
+        well on both a phone and a computer.
+      </p>
+      <p>
+        I built it free from registration, app stores and business models,
+        which makes it that much easier to pick up and use. Nothing is
+        uploaded, all data lives on the user's machine, and the build
+        ships with a full security policy.
+      </p>
+
+      <h3>Player app</h3>
+      <ul>
+        <li>Browser-based, works on phones and computers. No install.</li>
+        <li>Title screen, tale library, saves (autosave + manual), settings.</li>
+        <li>Three colour themes. Tales can bring their own.</li>
+        <li>Music (looping, crossfade), sound effects, video (skippable).</li>
+        <li>Backgrounds, inline pictures (six frame styles), zoomable maps.</li>
+        <li>Speech formatting, text input with optional keypad.</li>
+        <li>Timed pauses.</li>
+        <li>Player app loads in under 250 KB of code. Tales load on demand.</li>
+      </ul>
+
+      <h3>Editor</h3>
+      <ul>
+        <li>Browser-based (best on a computer). No install, no account.</li>
+        <li>Ink syntax highlighting, folding, problem checking.</li>
+        <li>Live preview: exactly what the player sees, replays your choices on edit.</li>
+        <li>Story map: visual graph of scenes and choices.</li>
+        <li>Drag-and-drop media with automatic conversion (AVIF, M4A, MP4).</li>
+        <li>Theme tab: six-colour palette, contrast checking, background picture.</li>
+        <li>Multiple ink files, insert toolbar, templates, worked example.</li>
+        <li>Each browser tab holds its own tale (Web Locks).</li>
+        <li>Publish runs 50 random playthroughs before building the <code>.tale</code>.</li>
+        <li>Editor loads in under 750 KB of code. Media conversion loads on demand.</li>
+      </ul>
+
+      <h3>File formats</h3>
+      <ul>
+        <li><code>.otproject</code>: the source (ZIP of <code>.ink</code> files, media, <code>tale.json</code>). Reopen in the editor or unzip and use Inky. <a href="../wiki/otproject-spec.md">Spec</a>.</li>
+        <li><code>.tale</code>: the compiled tale for players (ZIP of compiled ink JSON + media, hash-verified). Data only, no code. <a href="../wiki/story-package-spec.md">Spec</a>.</li>
+        <li>Standard ink throughout. Every media tag is a standard ink tag Inky silently ignores. No lock-in.</li>
+      </ul>
+      <p>Both formats are documented, open, and versioned.</p>
+
+      <h3>Privacy and cost</h3>
+      <ul>
+        <li>No account, no login, no tracking, no ads.</li>
+        <li>Everything stays on the device. Nothing is uploaded.</li>
+        <li>Free. MIT-licensed. No business model.</li>
+      </ul>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── ESTABLISHED ───────────────────── -->
+
+      <h2 id="established">Established tools</h2>
+      <p>
+        How Offtrail Tales sits next to the tools authors already know.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Browser editor</th>
+            <th>Media</th>
+            <th>Choice-based</th>
+            <th>No install</th>
+            <th>Free</th>
+            <th>Key difference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Offtrail Tales</strong></td>
+            <td class="check">Yes</td>
+            <td class="check">Images, audio, video, maps</td>
+            <td class="check">Yes (ink)</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes (MIT)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td id="row-twine"><a href="#detail-twine">Twine</a></td>
+            <td class="check">Yes (also desktop)</td>
+            <td class="no">Manual (embed in HTML)</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td>No player, no mobile output, media is manual</td>
+          </tr>
+          <tr>
+            <td id="row-inky"><a href="#detail-inky">Inky</a></td>
+            <td class="no">Desktop only (Electron)</td>
+            <td class="no">No</td>
+            <td class="check">Yes (ink)</td>
+            <td class="no">Requires install</td>
+            <td class="check">Yes (MIT)</td>
+            <td>Editor only, no media, no player</td>
+          </tr>
+          <tr>
+            <td id="row-choicescript"><a href="#detail-choicescript">ChoiceScript</a></td>
+            <td class="no">CSIDE (community)</td>
+            <td class="no">Cover images only</td>
+            <td class="check">Yes</td>
+            <td>Partial</td>
+            <td class="no">Free non-commercial; commercial via CoG</td>
+            <td>Text-only, commercial publishing gatekeep</td>
+          </tr>
+          <tr>
+            <td id="row-inform7"><a href="#detail-inform7">Inform 7</a></td>
+            <td class="no">Desktop IDE</td>
+            <td>Glulx supports some</td>
+            <td class="no">Parser-based</td>
+            <td class="no">Requires install</td>
+            <td class="check">Yes</td>
+            <td>Parser IF, different genre</td>
+          </tr>
+          <tr>
+            <td id="row-adventuron"><a href="#detail-adventuron">Adventuron</a></td>
+            <td class="check">Yes</td>
+            <td>Pixel art, fonts, music</td>
+            <td class="no">Primarily parser</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td>Parser-first, retro aesthetic</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="detail-twine"><a href="#established">Twine</a></h3>
+      <p>
+        The most widely used IF authoring tool. Visual node editor with
+        passages connected by links. Multiple story formats (Harlowe,
+        SugarCube, Chapbook). Exports standalone HTML files.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Each Twine story bakes the
+        player into the HTML. No shared player, no tale library, no saves
+        across stories. Media is possible but manual: you embed it in HTML
+        yourself, with no conversion pipeline or media tags. Output is
+        generally not optimized for phones. Offtrail Tales separates story
+        from player, treats media as first-class, and one app plays any tale.
+      </p>
+
+      <h3 id="detail-inky"><a href="#established">Inky</a></h3>
+      <p>
+        inkle's own editor for ink. Desktop app (Electron). Syntax
+        highlighting, preview panel, error checking. The reference
+        implementation.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Inky is desktop-only, text-only,
+        and exports a JSON file with a bare HTML template you style and host
+        yourself. No media support, no shared player, no mobile-friendly
+        output. Offtrail Tales is the browser editor and player that picks up
+        where Inky stops: same ink language, but with media, themes, a shared
+        player, and <code>.tale</code> files ready to share.
+      </p>
+
+      <h3 id="detail-choicescript"><a href="#established">ChoiceScript</a></h3>
+      <p>
+        Choice of Games' scripting language for choice-based fiction.
+        Text-heavy, stat-driven. CSIDE is the community-built editor.
+        Commercial publication through Choice of Games or Hosted Games.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Text-only (cover images only).
+        Commercial use requires publishing through Choice of Games. No media
+        support. Offtrail Tales is fully open (MIT), with native media and
+        no publishing gatekeep.
+      </p>
+
+      <h3 id="detail-inform7"><a href="#established">Inform 7</a></h3>
+      <p>
+        A natural-language programming system for parser-based interactive
+        fiction. Desktop IDE. Compiles to Z-machine or Glulx. The standard
+        for parser IF.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Parser IF (typed commands),
+        entirely different genre. Desktop-only. Offtrail Tales is
+        choice-based with media, browser-only.
+      </p>
+
+      <h3 id="detail-adventuron"><a href="#established">Adventuron</a></h3>
+      <p>
+        A browser-based IDE for retro-style text adventures. Code editor with
+        preview panel, pixel art support, music. Primarily parser-based with
+        experimental choice support. Games publish to itch.io.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Primarily parser-based with a
+        retro aesthetic. Offtrail Tales is choice-based with modern media
+        (photos, audio, video, maps) and a mobile-first player.
+      </p>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── COMPARISON ───────────────────── -->
+
+      <h2 id="comparison">New and emerging tools</h2>
+      <p>
+        Platforms from the intfiction.org
+        <a href="https://intfiction.org/t/list-new-development-systems-here/78068">new development systems thread</a>,
+        checked against each platform's site or documentation (November 2026).
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Browser editor</th>
+            <th>Media</th>
+            <th>Ink</th>
+            <th>No install</th>
+            <th>Free</th>
+            <th>Key difference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Offtrail Tales</strong></td>
+            <td class="check">Yes</td>
+            <td class="check">Images, audio, video, maps</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes (MIT)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td id="row-atrament"><a href="#detail-atrament">Atrament</a></td>
+            <td class="no">No (dev toolkit)</td>
+            <td class="check">Images, audio, video</td>
+            <td class="check">Yes</td>
+            <td class="no">Requires npm/build</td>
+            <td class="check">Yes (MIT)</td>
+            <td>Developer library, no editor, build your own app</td>
+          </tr>
+          <tr>
+            <td id="row-kinexus"><a href="#detail-kinexus">Kinexus</a></td>
+            <td class="check">Yes (Chrome only)</td>
+            <td>Images, audio</td>
+            <td class="no">No</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td>No variables or conditionals</td>
+          </tr>
+          <tr>
+            <td id="row-narrat"><a href="#detail-narrat">Narrat</a></td>
+            <td class="no">CLI project setup</td>
+            <td>Audio, portraits</td>
+            <td class="no">No (own syntax)</td>
+            <td class="no">Requires npm</td>
+            <td class="check">Yes</td>
+            <td>RPG engine, not pure choice-based</td>
+          </tr>
+          <tr>
+            <td id="row-storyfall"><a href="#detail-storyfall">Storyfall</a></td>
+            <td class="check">Yes (platform)</td>
+            <td>Unknown</td>
+            <td class="no">No</td>
+            <td class="check">Yes</td>
+            <td class="no">30% marketplace fee</td>
+            <td>Marketplace with accounts, fees, beta ink import</td>
+          </tr>
+          <tr>
+            <td id="row-bardic"><a href="#detail-bardic">Bardic</a></td>
+            <td class="no">No (VS Code + CLI)</td>
+            <td>Unknown</td>
+            <td class="no">No (Python + .bard)</td>
+            <td class="no">Requires Python</td>
+            <td class="check">Yes (MIT)</td>
+            <td>Requires Python and CLI</td>
+          </tr>
+          <tr>
+            <td id="row-rez"><a href="#detail-rez">Rez</a></td>
+            <td class="no">No (compiler)</td>
+            <td class="check">Images, sounds, video</td>
+            <td class="no">No (own language)</td>
+            <td class="no">Requires compiler</td>
+            <td class="check">Yes (GPLv3)</td>
+            <td>Game-engine language with RPG systems</td>
+          </tr>
+          <tr>
+            <td id="row-moving-literature"><a href="#detail-moving-literature">Moving Literature</a></td>
+            <td class="check">Yes (no-code)</td>
+            <td>Images, Lottie animations</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes (IFTF-funded)</td>
+            <td>No audio/video/maps, no player app</td>
+          </tr>
+          <tr>
+            <td id="row-liminal"><a href="#detail-liminal">Liminal</a></td>
+            <td class="no">No (player only)</td>
+            <td class="no">Per format</td>
+            <td class="no">No</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes</td>
+            <td>Multi-format player, no editor</td>
+          </tr>
+          <tr>
+            <td id="row-etherground"><a href="#detail-etherground">Etherground</a></td>
+            <td class="check">Yes (node editor)</td>
+            <td class="no">HTML export only, no themes</td>
+            <td class="no">No</td>
+            <td class="check">Yes</td>
+            <td class="check">Yes (beta)</td>
+            <td>Beta, no media pipeline</td>
+          </tr>
+          <tr>
+            <td id="row-chroniclehub"><a href="#detail-chroniclehub">ChronicleHub</a></td>
+            <td>Unknown (whitelist beta)</td>
+            <td>Unknown</td>
+            <td class="no">No (ScribeScript)</td>
+            <td>Unknown</td>
+            <td>Unknown</td>
+            <td>QBN storylets, different narrative model</td>
+          </tr>
+          <tr>
+            <td id="row-chosenpath"><a href="#detail-chosenpath">ChosenPath.ai</a></td>
+            <td>Unknown</td>
+            <td>Unknown</td>
+            <td class="no">No</td>
+            <td>Unknown</td>
+            <td>Unknown</td>
+            <td>AI-generated content, not author-written</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="ink-based" style="margin-top:2.5rem;color:var(--parchment-dim);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.05em;">Ink-based</h3>
+
+      <h3 id="detail-atrament"><a href="#comparison">Atrament</a></h3>
+      <p>
+        A modular developer toolkit for building ink games. Includes saves
+        (autosave, checkpoints, slots), rich text markup, overlays, themes,
+        images, audio, video, and a debugger. Exports standalone HTML, PWA,
+        desktop apps and Android.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Atrament is a library you build
+        your own app around. It has no editor. You write ink in VS Code,
+        configure JSON, and run npm scripts. Offtrail Tales is the finished
+        app and editor: open the browser, write, preview, publish.
+      </p>
+
+      <h3 id="detail-moving-literature"><a href="#comparison">Moving Literature</a></h3>
+      <p>
+        No-code browser tool for IF built on ink, with images and Lottie
+        animations triggered by ink tags. Funded by a 2025 IFTF micro-grant.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Also ink-based and
+        browser-based, but no audio, video or maps. No dedicated player app
+        or tale format: stories are published as web pages. Offtrail Tales
+        has full media support, a shared player, and portable
+        <code>.tale</code> files.
+      </p>
+
+      <h3>inFict</h3>
+      <p>
+        A platform for Twine, Ink or Inform stories connected to real-world
+        channels: texts, calls, email, GPS triggers, multiplayer. Invite-only
+        beta.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Different goal entirely. inFict
+        bridges IF into real-world interaction. Offtrail Tales stays on-screen
+        with native media support.
+      </p>
+
+      <h3 id="choice-based" style="margin-top:2.5rem;color:var(--parchment-dim);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.05em;">Choice-based (not ink)</h3>
+
+      <h3 id="detail-kinexus"><a href="#comparison">Kinexus</a></h3>
+      <p>
+        A browser-based, no-code visual editor. Scenes with images and audio,
+        a tree view, built-in player, export to ZIP for itch.io. Chrome only.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> No conditionals or variables.
+        Stories cannot branch on state. Not ink, so work is not portable.
+        Offtrail Tales has full ink logic, media as first-class tags, and
+        works in any browser.
+      </p>
+
+      <h3 id="detail-narrat"><a href="#comparison">Narrat</a></h3>
+      <p>
+        A game engine for narrative games with RPG features: skill checks,
+        inventory, quests, character portraits. Own scripting syntax. Exports
+        for web and PC (Steam).
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> An RPG engine with game
+        mechanics. Requires CLI project setup (npm). Offtrail Tales focuses
+        on pure choice-based fiction with media, runs entirely in the browser.
+      </p>
+
+      <h3 id="detail-storyfall"><a href="#comparison">Storyfall</a></h3>
+      <p>
+        An authoring tool and publishing marketplace. Writers sell directly to
+        readers, platform charges fees via Stripe.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> A marketplace with accounts and
+        payment processing. Offtrail Tales has no platform, no account, no
+        fees. You keep and distribute your files however you choose.
+      </p>
+
+      <h3 id="detail-chosenpath"><a href="#comparison">ChosenPath.ai</a></h3>
+      <p>
+        AI generates story environments from a premise. Single and multiplayer.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> AI-driven content generation.
+        Offtrail Tales is author-written. No AI runs in the app or editor.
+      </p>
+
+      <h3 id="other" style="margin-top:2.5rem;color:var(--parchment-dim);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.05em;">Other paradigms</h3>
+
+      <h3 id="detail-bardic"><a href="#comparison">Bardic</a></h3>
+      <p>
+        A Python-first IF engine. <code>.bard</code> files (ink-inspired
+        syntax) compile to JSON. VS Code extension. Bundles for itch.io via
+        Pyodide (full Python runtime in the browser). MIT-licensed.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Requires Python, a CLI and
+        VS Code. Offtrail Tales runs entirely in the browser with no install.
+      </p>
+
+      <h3 id="detail-rez"><a href="#comparison">Rez</a></h3>
+      <p>
+        A declarative language, compiler and runtime for HTML-based IF.
+        Scenes and cards, inventory, factions, NPCs, behaviour trees. Assets
+        (images, sounds, video) managed automatically. Open-source.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> A full game-engine language with
+        RPG systems. Requires a compiler and coding. Offtrail Tales is
+        browser-only, choice-based with media, no install.
+      </p>
+
+      <h3 id="detail-etherground"><a href="#comparison">Etherground</a></h3>
+      <p>
+        A narrative engine with a browser node editor. Branching, inventory,
+        handouts, word-swapping mechanic. Inspired by tabletop RPGs. Beta.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Still in beta with no theming or
+        media pipeline. Offtrail Tales is a finished, shipped editor and
+        player.
+      </p>
+
+      <h3 id="detail-chroniclehub"><a href="#comparison">ChronicleHub</a></h3>
+      <p>
+        A quality-based narrative engine (StoryNexus-style). Custom
+        "ScribeScript" syntax. Whitelist-only beta.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> QBN (storylets gated by state) is
+        a different narrative model from linear-spine choice-based fiction.
+      </p>
+
+      <h3>Quest Viva 6.0</h3>
+      <p>Updated Quest, parser-based (typed commands), cross-platform.</p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Parser IF. Different genre
+        entirely.
+      </p>
+
+      <h3 id="detail-liminal"><a href="#comparison">Liminal</a></h3>
+      <p>
+        A browser-based player for Twine HTML, Z-code, Glulx, ChoiceScript
+        and Dialog formats. In development. No editor.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Multi-format player, but no
+        editor and no portable media-rich tale format. Offtrail Tales is
+        both the editor and the player, purpose-built for one format with
+        full media.
+      </p>
+
+      <h3>Scribarchy</h3>
+      <p>
+        Browser-based multiplayer collaborative IF. Players explore or build
+        multiverses from public-domain works. Also a play-by-post RPG
+        platform.
+      </p>
+      <p>
+        <strong>vs. Offtrail Tales:</strong> Multiplayer and collaborative,
+        text only. Offtrail Tales is single-author, single-player with rich
+        media.
+      </p>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── EXCLUDED ───────────────────── -->
+
+      <h2 id="excluded">Not compared</h2>
+      <p>
+        Tools from the intfiction.org catalog that are too far from
+        choice-based IF with media to warrant a detailed comparison.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Why excluded</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dragonfly</td><td>Parser IF engine (JavaScript/DFML), GitHub Pages demos.</td></tr>
+          <tr><td>Arcturus</td><td>Z-machine compiler for parser IF.</td></tr>
+          <tr><td>Sharpee</td><td>Parser engine with in-memory world model.</td></tr>
+          <tr><td>GoDungeon</td><td>Gamebook engine with RPG dice rolls and inventory.</td></tr>
+          <tr><td>IFFinity</td><td>Minimal engine, no media, limited information.</td></tr>
+          <tr><td>MAD Candy IF Studio</td><td>Windows-only desktop studio.</td></tr>
+          <tr><td>StoryMate</td><td>AI-assisted, AI-generated images, early development.</td></tr>
+          <tr><td>Ijinx's Branching Editor</td><td>AI-powered translation tool, not a player or media editor.</td></tr>
+          <tr><td>Scriptr</td><td>Windows-only offline text engine.</td></tr>
+          <tr><td>Story Builder</td><td>School project, minimal features.</td></tr>
+          <tr><td>Story Builders World</td><td>Potentially defunct, site down.</td></tr>
+          <tr><td>NovelCrafted</td><td>Potentially defunct.</td></tr>
+          <tr><td>Scribarchy</td><td>Multiplayer collaborative platform, text only.</td></tr>
+          <tr><td>Dendry</td><td>Storylet system with Node.js, different narrative model.</td></tr>
+          <tr><td>Ren'Py</td><td>Visual novel engine, not choice-based IF.</td></tr>
+          <tr><td>Texture</td><td>Drag-and-drop interaction model, different paradigm.</td></tr>
+          <tr><td>Inform 6</td><td>Parser IF compiler.</td></tr>
+          <tr><td>PunyInform</td><td>Parser IF for retro hardware.</td></tr>
+          <tr><td>TADS 3</td><td>Parser IF.</td></tr>
+          <tr><td>Dialog</td><td>Parser IF.</td></tr>
+          <tr><td>ADRIFT</td><td>Parser IF.</td></tr>
+          <tr><td>AGT</td><td>Parser IF.</td></tr>
+          <tr><td>Alan 3</td><td>Parser IF.</td></tr>
+          <tr><td>Hugo</td><td>Parser IF.</td></tr>
+          <tr><td>Gruescript / MAGGE</td><td>Parser-like browser tool.</td></tr>
+          <tr><td>Storealis</td><td>Predates this window, no recent activity.</td></tr>
+          <tr><td>Booktasy / ThunderSOS</td><td>No description available.</td></tr>
+        </tbody>
+      </table>
+
+      <a class="top-link" href="#top">Back to top</a>
+
+      <!-- ───────────────────── FOOTER ───────────────────── -->
+
+      <footer>
+        <p>
+          <a href="checklist.html">New platform checklist</a> (Hidnook's list)
+        </p>
+        <p>
+          Offtrail Tales by Richard Karlsson Linn&eacute;r.
+          <a href="mailto:offtrail-tales@proton.me">offtrail-tales@proton.me</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
