@@ -1,0 +1,18 @@
+{
+  "format": "0.1",
+  "id": "the-intercept",
+  "version": "1.0.0",
+  "title": "The Intercept",
+  "language": "en",
+  "authors": [
+    "inkle Ltd"
+  ],
+  "description": "Bletchley Park, 1942. A short interactive story by inkle, the studio behind ink.",
+  "license": "MIT",
+  "story": {
+    "path": "story/main.ink.json",
+    "bytes": 154466,
+    "sha256": "36143e0983bfe7d6735747e2f7cc7d02fc0116dcbe696be7b48f7df8917ddfb3"
+  },
+  "media": {}
+}

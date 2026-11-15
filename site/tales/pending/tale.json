@@ -1,0 +1,598 @@
+{
+  "format": "0.1",
+  "id": "pending",
+  "title": "Pending",
+  "language": "en",
+  "authors": [
+    "Richard Karlsson Linnér"
+  ],
+  "description": "You remember when rules made sense and made things better. Then came more rules, to fix the old ones. Some act as if every rule ever written still applies. Others act as if none ever existed. Nobody knows which is right.",
+  "cover": "pending-platform-bulletin",
+  "credits": [
+    {
+      "assets": [
+        "pending-platform-bulletin"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-bureau-floor"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-records-background"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-appendix"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-file"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-file-form9-eye",
+        "pending-file-form9-not-filed",
+        "pending-file-holiday-flagged",
+        "pending-file-week1-flagged",
+        "pending-file-week2-flagged",
+        "pending-file-week3-flagged",
+        "pending-file-week4-flagged",
+        "pending-file-housing-revoked",
+        "pending-file-calibration",
+        "pending-file-status-void",
+        "pending-file-status-clarified",
+        "pending-file-status-calibrator",
+        "pending-file-status-resolved"
+      ],
+      "by": "Stamps generated with ChatGPT (OpenAI), AI generated, placed on transparent layers",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-dads-house"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-end-rule-one"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "pending-end-clarified"
+      ],
+      "by": "Generated with ChatGPT (OpenAI), AI generated",
+      "license": "LicenseRef-ChatGPT"
+    },
+    {
+      "assets": [
+        "elevator-on-hold-music"
+      ],
+      "by": "vjgalaxy, Elevator On Hold Music (re-encoded, volume lowered)",
+      "license": "LicenseRef-Pixabay-Content-License"
+    },
+    {
+      "assets": [
+        "attention-chime"
+      ],
+      "by": "Universfield, Attention Chime (re-encoded, volume lowered)",
+      "license": "LicenseRef-Pixabay-Content-License"
+    },
+    {
+      "assets": [
+        "phones-buzzing"
+      ],
+      "by": "soundreality, Sound of Phone Vibrating, Phone Vibration Symphony and Phone Vibration Fast (mixed, re-encoded)",
+      "license": "LicenseRef-Pixabay-Content-License"
+    },
+    {
+      "assets": [
+        "concrete-forest"
+      ],
+      "by": "back_drop, Dark Piano Ambient Background Music (concrete forest) (re-encoded, volume lowered)",
+      "license": "LicenseRef-Pixabay-Content-License",
+      "source": "https://pixabay.com/music/ambient-dark-piano-ambient-background-music-concrete-forest-208256/"
+    },
+    {
+      "assets": [
+        "spooky-music-box"
+      ],
+      "by": "Universfield, Spooky Music Box (re-encoded)",
+      "license": "LicenseRef-Pixabay-Content-License",
+      "source": "https://pixabay.com/users/universfield-28281460/"
+    },
+    {
+      "assets": [
+        "form9-stamp"
+      ],
+      "by": "snoops_audio, 04 Alarms & Beeps - Scanning for Hostiles B (mixed, re-encoded)",
+      "license": "LicenseRef-Pixabay-Content-License"
+    },
+    {
+      "assets": [
+        "form9-stamp"
+      ],
+      "by": "Field & Foley via Splice, Modern Trailer Toolkit, door slam (mixed, re-encoded)",
+      "license": "LicenseRef-Splice"
+    },
+    {
+      "assets": [
+        "notebook-writing"
+      ],
+      "by": "Pixabay video 12040, writing in a notebook",
+      "license": "LicenseRef-Pixabay-Content-License"
+    },
+    {
+      "assets": [
+        "security-camera"
+      ],
+      "by": "Pixabay video 320453, security camera (scaled down, re-encoded)",
+      "license": "LicenseRef-Pixabay-Content-License"
+    },
+    {
+      "assets": [
+        "subway-train"
+      ],
+      "by": "Coverr-Free-Footage, Pixabay video 1003 (trimmed, re-encoded)",
+      "license": "LicenseRef-Pixabay-Content-License",
+      "source": "https://pixabay.com/users/coverr-free-footage-1281706/"
+    },
+    {
+      "assets": [
+        "subway-train"
+      ],
+      "by": "SFXB via Splice, Subway Pass By (trimmed, mixed into the video)",
+      "license": "LicenseRef-Splice"
+    },
+    {
+      "assets": [
+        "train-ending"
+      ],
+      "by": "SFXB via Splice, Train Pass By (trimmed, re-encoded)",
+      "license": "LicenseRef-Splice"
+    }
+  ],
+  "version": "2026-11-14-051734a",
+  "story": {
+    "path": "story/main.ink.json",
+    "bytes": 83576,
+    "sha256": "6a797728c9cbdc9771648dcd4d2f635fbf9f9a520a98818cbd09de642a480cbb"
+  },
+  "media": {
+    "attention-chime": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/attention-chime.m4a",
+          "bytes": 71786,
+          "sha256": "a3237df632f077e30a2b5ae3fb016364a3845bab67fac1c9ee283ab2c5227d1b"
+        }
+      ]
+    },
+    "concrete-forest": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/concrete-forest.m4a",
+          "bytes": 2892143,
+          "sha256": "1207113a485b521953db69818f480da1986cc09191991c94ffc838653efe24f8"
+        }
+      ]
+    },
+    "elevator-on-hold-music": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/elevator-on-hold-music.m4a",
+          "bytes": 2484316,
+          "sha256": "37e33caa0757fd7d26f96598bf10459831848ff751cb002e98bf54e435966c7d"
+        }
+      ]
+    },
+    "form9-stamp": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/form9-stamp.m4a",
+          "bytes": 99067,
+          "sha256": "d469e83d71054ce099acd86e23c414f4d41d9d1a67df5ba968dd7f3147fb05f7"
+        }
+      ]
+    },
+    "phones-buzzing": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/phones-buzzing.m4a",
+          "bytes": 74548,
+          "sha256": "5a3f82d5333de0c01bf82b94265132da178b9e6ece48f2284ab004c05e5721c8"
+        }
+      ]
+    },
+    "spooky-music-box": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/spooky-music-box.m4a",
+          "bytes": 1333995,
+          "sha256": "134ac1ccfe6aa5f98685802b75f2262d5e72e455df65a86608d80332651080bd"
+        }
+      ]
+    },
+    "train-ending": {
+      "type": "audio",
+      "files": [
+        {
+          "path": "media/audio/train-ending.m4a",
+          "bytes": 147414,
+          "sha256": "20bb6a63b02c7ca4d512437c6830ffe6a6b88e4cf8268fa55230c7bcd8f00d6b"
+        }
+      ]
+    },
+    "pending-appendix": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-appendix.avif",
+          "bytes": 78440,
+          "sha256": "666ea3d915edc2680298cb41594f87a0f27ec434d426466870625d862228aecd"
+        },
+        {
+          "path": "media/img/pending-appendix.webp",
+          "bytes": 84276,
+          "sha256": "1a8118559e2fb441b00c382fce406457901807b9803fe0049eafa42163d04e7c"
+        }
+      ]
+    },
+    "pending-bureau-floor": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-bureau-floor.avif",
+          "bytes": 109750,
+          "sha256": "2f3f86524261ca90192cdb872736b05b17ef1e18031bad1386e69ad530525b6a"
+        },
+        {
+          "path": "media/img/pending-bureau-floor.webp",
+          "bytes": 125184,
+          "sha256": "7b66edb6c48a1bd35c5d70a8ef7c937e7148fe7bf40052bb6ec372369bc695e1"
+        }
+      ]
+    },
+    "pending-dads-house": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-dads-house.avif",
+          "bytes": 135858,
+          "sha256": "de66e677bb0d1d7b35379c2b20bfe770dc8447fe2e4d6433fb9883eaa0b4d661"
+        },
+        {
+          "path": "media/img/pending-dads-house.webp",
+          "bytes": 163570,
+          "sha256": "be76415bd64fd6f6896fdba69f03fd1585d2c3bf0b5609e27a605d11887801a9"
+        }
+      ]
+    },
+    "pending-end-clarified": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-end-clarified.avif",
+          "bytes": 100501,
+          "sha256": "22df35b7d91c5019f3f3f75e57f33e25a0b343e92c7a2445021ed63db6d64cdd"
+        },
+        {
+          "path": "media/img/pending-end-clarified.webp",
+          "bytes": 120418,
+          "sha256": "de6ce9aa35cec3029aa56e99a0e9acb9fe898ff4727d976d85fa695b6f84ad34"
+        }
+      ]
+    },
+    "pending-end-rule-one": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-end-rule-one.avif",
+          "bytes": 135312,
+          "sha256": "146db83912d25432af18fc14222b53965f45ad0adbfafbcff32edafed7f6c969"
+        },
+        {
+          "path": "media/img/pending-end-rule-one.webp",
+          "bytes": 168426,
+          "sha256": "fe2279db3707a6d86c61df875888174e85e69cf7f8070fa56cf8a2b9821fd4cc"
+        }
+      ]
+    },
+    "pending-file-calibration": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-calibration.avif",
+          "bytes": 10667,
+          "sha256": "3048332efb73edf2dc958c21b610c6b2eba0fe2227c4248f5b0448ef788d29db"
+        },
+        {
+          "path": "media/img/pending-file-calibration.webp",
+          "bytes": 20436,
+          "sha256": "683d7bf1715a32d8381365106613a683bc2d39dd17712505d01caf4f3a22f48a"
+        }
+      ]
+    },
+    "pending-file-form9-eye": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-form9-eye.avif",
+          "bytes": 4596,
+          "sha256": "d9bd4d31c5363b75dd7e3727d2f33056bada5ecb81b3ba1e85d59fb16492f560"
+        },
+        {
+          "path": "media/img/pending-file-form9-eye.webp",
+          "bytes": 11284,
+          "sha256": "94e18c82df5173d4aea24383cc965e9af0948c0c70a32b59b327d6f398a1fce7"
+        }
+      ]
+    },
+    "pending-file-form9-not-filed": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-form9-not-filed.avif",
+          "bytes": 8729,
+          "sha256": "252bfe85ccf3058e7c65925d1401f7907657d0e7612d5d89d474cdeee6cc00be"
+        },
+        {
+          "path": "media/img/pending-file-form9-not-filed.webp",
+          "bytes": 18790,
+          "sha256": "352e6b5126e27823fd2ceba263b6c9e6f0fb3dfc526c803e9089379904c38d33"
+        }
+      ]
+    },
+    "pending-file-holiday-flagged": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-holiday-flagged.avif",
+          "bytes": 8534,
+          "sha256": "93d750a731d490338f694ae60834bcdd0194ce23f97b9df02d6f0dcfb445b7db"
+        },
+        {
+          "path": "media/img/pending-file-holiday-flagged.webp",
+          "bytes": 18260,
+          "sha256": "5db936dcd804b2f7b375ecbab4cf0e50fe60afd93e90977d5ebd28b3e44f98b5"
+        }
+      ]
+    },
+    "pending-file-housing-revoked": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-housing-revoked.avif",
+          "bytes": 7963,
+          "sha256": "a9153c429610822b883adac0b7cc056fa02363dd1f1e136168ee90046b67d622"
+        },
+        {
+          "path": "media/img/pending-file-housing-revoked.webp",
+          "bytes": 17360,
+          "sha256": "22902344d886c48f38d72be474f64d8cd8bf6476226cabd0f8e0818c410d69db"
+        }
+      ]
+    },
+    "pending-file-status-calibrator": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-status-calibrator.avif",
+          "bytes": 16763,
+          "sha256": "3d83a226406baa7a41365447fdcf096032a463bfcf038bb9e094299f01005db5"
+        },
+        {
+          "path": "media/img/pending-file-status-calibrator.webp",
+          "bytes": 37756,
+          "sha256": "ed9dbe14517f025731f3d15e6b6b85dee5503210e3c4313ea7d7f232ffd5fde0"
+        }
+      ]
+    },
+    "pending-file-status-clarified": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-status-clarified.avif",
+          "bytes": 15937,
+          "sha256": "b088ff62830815a2034b74d6cf1d28d69bc1bbf3e00423e3a34b63d80bd1477a"
+        },
+        {
+          "path": "media/img/pending-file-status-clarified.webp",
+          "bytes": 32148,
+          "sha256": "d09218ef373fc6bcdd53a02c60f01c3024cb3415948ca130ee8182e3be8154e5"
+        }
+      ]
+    },
+    "pending-file-status-resolved": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-status-resolved.avif",
+          "bytes": 8348,
+          "sha256": "2a4d5bca41fd1342fae1d1cce09d51b667a0e11b3c7043bdd60ef78508e49eda"
+        },
+        {
+          "path": "media/img/pending-file-status-resolved.webp",
+          "bytes": 28316,
+          "sha256": "4aac3f0fd23af71de331db3c78a528039e38b4f0d252f8dc8d3303102d5b31b4"
+        }
+      ]
+    },
+    "pending-file-status-void": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-status-void.avif",
+          "bytes": 10756,
+          "sha256": "36aa27d087fdbb0aa2f1da98256e6f1be8d9b5a5dd53854135ba2b73b3cf65e7"
+        },
+        {
+          "path": "media/img/pending-file-status-void.webp",
+          "bytes": 28290,
+          "sha256": "d8efb09b9d87b58f2f0ffbdac47c68aade561964cf03d5c02c688133e983a694"
+        }
+      ]
+    },
+    "pending-file-week1-flagged": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-week1-flagged.avif",
+          "bytes": 3797,
+          "sha256": "727a0a18cb06fa7eeab3b1a11e58d9cbcd8356edb4f78b4ca0661a118b4307e7"
+        },
+        {
+          "path": "media/img/pending-file-week1-flagged.webp",
+          "bytes": 8706,
+          "sha256": "bc69961e8ea7e282b5b7eb24a05ff420bc9aa446bd3fc6f323fc65ccae6d0f29"
+        }
+      ]
+    },
+    "pending-file-week2-flagged": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-week2-flagged.avif",
+          "bytes": 3750,
+          "sha256": "a9b1b50048bafe071b5815fa722f0c019689028459dfb10f396e9b8b0b153dc2"
+        },
+        {
+          "path": "media/img/pending-file-week2-flagged.webp",
+          "bytes": 8686,
+          "sha256": "fd3ca5ff51f04aed64a7e30ad8f683165b60b3311b7124e9a3b6880ba80690f3"
+        }
+      ]
+    },
+    "pending-file-week3-flagged": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-week3-flagged.avif",
+          "bytes": 3866,
+          "sha256": "71309d74f3f83f593ffccf367ddd67c29dacd4974847940d9bf4f913f12ab911"
+        },
+        {
+          "path": "media/img/pending-file-week3-flagged.webp",
+          "bytes": 8726,
+          "sha256": "574767472bf2a435350a19030a327ef6865c7348120c2ac910989ef5bc83a81a"
+        }
+      ]
+    },
+    "pending-file-week4-flagged": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file-week4-flagged.avif",
+          "bytes": 4109,
+          "sha256": "0d6c87060879dfc3cbca40d84f921c1a677b648739522a0dbc67a923b44c39a5"
+        },
+        {
+          "path": "media/img/pending-file-week4-flagged.webp",
+          "bytes": 8830,
+          "sha256": "c8d4b1e70800ea746a02c2be593b2dae422194230b24dd9428900a7b72624ff1"
+        }
+      ]
+    },
+    "pending-file": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-file.avif",
+          "bytes": 130651,
+          "sha256": "ff629695e2ec442760991c706c97c961f0cafd8f8ab4af4ee324944dba95ca23"
+        },
+        {
+          "path": "media/img/pending-file.webp",
+          "bytes": 159044,
+          "sha256": "5e2753f32214776adfc3256a29d308435c052d457974097514c8620ae0d836b3"
+        }
+      ]
+    },
+    "pending-platform-bulletin": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-platform-bulletin.avif",
+          "bytes": 111989,
+          "sha256": "ef801c249482a642bb591dcbc08c072ea2181b7dcbf4d1c66e420df18e096147"
+        },
+        {
+          "path": "media/img/pending-platform-bulletin.webp",
+          "bytes": 137118,
+          "sha256": "e4ef554f123a39cb8910cde6dc06768645871345720db855d1cae32fe8a1543f"
+        }
+      ]
+    },
+    "pending-records-background": {
+      "type": "img",
+      "files": [
+        {
+          "path": "media/img/pending-records-background.avif",
+          "bytes": 96500,
+          "sha256": "28e0679579a3a1607bdfe49d65980caa224e5eb472397ff362b2a9a2f63e0952"
+        },
+        {
+          "path": "media/img/pending-records-background.webp",
+          "bytes": 97984,
+          "sha256": "7f62b7eddc8919847d90ca3bda27aaee5b5cd11429e53b03f98c6f7aaf916dd9"
+        }
+      ]
+    },
+    "notebook-writing": {
+      "type": "video",
+      "files": [
+        {
+          "path": "media/video/notebook-writing.mp4",
+          "bytes": 4861893,
+          "sha256": "ed5b800145f294b35382f37be46a08696818102b40d226713f31bffe5f93362a"
+        }
+      ]
+    },
+    "security-camera": {
+      "type": "video",
+      "files": [
+        {
+          "path": "media/video/security-camera.mp4",
+          "bytes": 1644453,
+          "sha256": "d68ec1057ae4f7095b6b44c5f364caf84ff31324da54b00cc61f784feb98cc47"
+        }
+      ]
+    },
+    "subway-train": {
+      "type": "video",
+      "files": [
+        {
+          "path": "media/video/subway-train.mp4",
+          "bytes": 2993441,
+          "sha256": "5e45a9c8da9f592bb42e5bb3248f869697f75b53c9123e4d13bb58080bb79e6e"
+        }
+      ]
+    }
+  }
+}

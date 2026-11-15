@@ -1,0 +1,32 @@
+{
+  "format": "0.1",
+  "tales": [
+    {
+      "id": "the-intercept",
+      "version": "1.0.0",
+      "title": "The Intercept",
+      "language": "en",
+      "manifest": "the-intercept/tale.json",
+      "storyBytes": 154466,
+      "mediaBytes": 0
+    },
+    {
+      "id": "no-exp",
+      "version": "2026-11-14-051734a",
+      "title": "No Experience Required",
+      "language": "en",
+      "manifest": "no-exp/tale.json",
+      "storyBytes": 40625,
+      "mediaBytes": 6544658
+    },
+    {
+      "id": "pending",
+      "version": "2026-11-14-051734a",
+      "title": "Pending",
+      "language": "en",
+      "manifest": "pending/tale.json",
+      "storyBytes": 83576,
+      "mediaBytes": 17609872
+    }
+  ]
+}
